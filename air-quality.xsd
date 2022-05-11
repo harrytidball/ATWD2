@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="station">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="rec"/>
+      </xs:sequence>
+    
+      <xs:attribute name="id" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:pattern value="[0-9][0-9][0-9]"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="name" use="required" type="xs:string"/>
+
+      <xs:attribute name="geocode" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9\-,.]*"/>
+            <xs:minLength value="26"/>
+            <xs:maxLength value="31"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+
+    </xs:complexType>
+  </xs:element>
+    
+   <xs:element name="rec">
+     <xs:complexType>
+     
+       <xs:attribute name="no">
+         <xs:simpleType>
+           <xs:union>
+             <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+               </xs:restriction>
+             </xs:simpleType>
+             <xs:simpleType>
+               <xs:restriction base="xs:string">
+                 <xs:length value='0'/>
+               </xs:restriction>
+             </xs:simpleType>
+           </xs:union>
+         </xs:simpleType>
+       </xs:attribute>
+       
+       <xs:attribute name="nox">
+         <xs:simpleType>
+           <xs:union>
+             <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+               </xs:restriction>
+             </xs:simpleType>
+             <xs:simpleType>
+               <xs:restriction base="xs:string">
+                 <xs:length value='0'/>
+               </xs:restriction>
+             </xs:simpleType>
+           </xs:union>
+         </xs:simpleType>
+       </xs:attribute>
+     
+       <xs:attribute name="no2">
+         <xs:simpleType>
+           <xs:union>
+             <xs:simpleType>
+               <xs:restriction base="xs:decimal">
+               </xs:restriction>
+             </xs:simpleType>
+             <xs:simpleType>
+               <xs:restriction base="xs:string">
+                 <xs:length value='0'/>
+               </xs:restriction>
+             </xs:simpleType>
+           </xs:union>
+         </xs:simpleType>
+       </xs:attribute>
+       
+       <xs:attribute name="ts" use="required">
+         <xs:simpleType>
+           <xs:restriction base="xs:string">
+             <xs:pattern value="[0-9]+"/>
+             <xs:maxLength value="10"/>
+           </xs:restriction>
+         </xs:simpleType>
+       </xs:attribute>
+     
+     </xs:complexType>
+   </xs:element>
+    
+</xs:schema>

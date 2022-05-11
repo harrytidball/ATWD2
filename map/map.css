@@ -1,0 +1,51 @@
+#map {
+    height: 400px;
+    width: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
+}
+
+button.gm-ui-hover-effect {
+    visibility: hidden;
+}
+
+body {
+    background-color: #5e91a8;
+    font-family: 'Segoe UI';
+}
+
+table, th, td {
+    border: 2px solid whitesmoke;
+    border-collapse: collapse;
+    text-align: center;
+    color: whitesmoke;
+    padding: 10px;
+    font-size: large;
+  }
+
+table {
+    margin: 0 auto; 
+}
+
+.title, .subtitle {
+    color: whitesmoke;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+}
+
+.infowindow {
+    color: black;
+}
+
+.centre {
+    font-size: 20px;
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+    color: #333;
+}
